@@ -1,8 +1,13 @@
+"""
+Simon Bing, TU Berlin
+2024
+"""
 import copy
 
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from scipy.optimize import linear_sum_assignment
+
 
 def interventional_CRL(Z_hat):
     envs = Z_hat.shape[1]
@@ -17,6 +22,7 @@ def interventional_CRL(Z_hat):
     Gamma = np.stack(Gamma_list)
 
     return Gamma
+
 
 def compute_MCC(z_hat, z, batch_size=128):
     num_samples = z_hat.shape[0]

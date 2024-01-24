@@ -1,3 +1,7 @@
+"""
+Simon Bing, TU Berlin
+2024
+"""
 import numpy as np
 from scipy.stats import norm, uniform
 
@@ -123,7 +127,6 @@ def get_scm(scm_id, seed, connect_prob=0.75):
         # Randomly sampled graph with 3 nodes
         W = rand_weight_matrix(seed=seed, nodes=3, connect_prob=0.75)
         assert np.sum(W) != 0, F'Graph is fully unconnected with this seed ({seed})'
-        # TODO: add check that W is not fully unconnected
         e1 = norm(0, .1)
         f1 = lambda e: e
         z1 = CausalVar(parents=None, noise_distr=e1, mechanism_fct=f1)

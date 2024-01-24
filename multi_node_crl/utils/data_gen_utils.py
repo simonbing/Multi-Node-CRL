@@ -1,4 +1,9 @@
+"""
+Simon Bing, TU Berlin
+2024
+"""
 import numpy as np
+
 
 def rand_weight_matrix(seed, nodes=3, connect_prob=0.5, wmin=0.1, wmax=1.0):
     """
@@ -29,6 +34,7 @@ def rand_weight_matrix(seed, nodes=3, connect_prob=0.5, wmin=0.1, wmax=1.0):
                 weight_matrix[i, j] = rng.uniform(wmin, wmax)
 
     return weight_matrix
+
 
 def get_rand_A(n, seed=42):
     rng = np.random.RandomState(seed=seed)

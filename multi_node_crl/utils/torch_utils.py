@@ -1,4 +1,9 @@
+"""
+Simon Bing, TU Berlin
+2024
+"""
 import torch
+
 
 def get_device():
     if torch.cuda.is_available():

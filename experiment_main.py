@@ -1,5 +1,9 @@
 """
-Code to reproduce experiments.
+Code to reproduce experiments in the paper "Identifying Linearly-Mixed Causal
+Representationsfrom Multi-Node Interventions".
+
+Simon Bing, TU Berlin
+2024
 """
 import sys
 import os

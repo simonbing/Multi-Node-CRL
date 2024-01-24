@@ -1,3 +1,7 @@
+"""
+Simon Bing, TU Berlin
+2024
+"""
 import numpy as np
 import torch
 from torch.utils.data import TensorDataset, DataLoader
@@ -5,6 +9,7 @@ import wandb
 
 from multi_node_crl.inference.models import MultiNodeIV
 from multi_node_crl.utils import get_device
+
 
 class MultiNodeIVModel(object):
     def __init__(self, seed, z_dim, epochs, batch_size, lr):
@@ -29,7 +34,6 @@ class MultiNodeIVModel(object):
 
     def train_model(self, Z_hat_train, Z_hat_val):
         """
-
         :param Z_hat: input data    shape : [n, n_envs, d]
         :return:
         """
@@ -88,9 +92,6 @@ class MultiNodeIVModel(object):
                  'train_loss_var': train_loss_var / len(train_dataloader),
                  'train_loss_norm': train_loss_norm / len(train_dataloader),
                  'epoch': epoch})
-
-            # Validation
-            # TODO
 
     def transform(self, Z_hat):
         """

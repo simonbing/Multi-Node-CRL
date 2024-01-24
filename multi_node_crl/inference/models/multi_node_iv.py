@@ -1,5 +1,10 @@
+"""
+Simon Bing, TU Berlin
+2024
+"""
 import torch
 from torch import nn
+
 
 class MultiNodeIV(nn.Module):
     def __init__(self, seed, z_hat_dim=3, z_dim=3):
@@ -49,7 +54,6 @@ class MultiNodeIV(nn.Module):
         constr_loss_2 = torch.sigmoid(2000 * (z_var_per_env_2 - shift)).sum()
         constr_loss = constr_loss_1 + constr_loss_2
 
-
         # Norm loss on the weights of the linear layer
         norm_loss = torch.square(torch.norm(self.mlp_z_hat_z.weight) - 1)
 
@@ -62,7 +66,6 @@ class MultiNodeIV(nn.Module):
         diag_loss = torch.stack(diag_loss_list).sum()
 
         return var_loss, constr_loss, diag_loss, norm_loss
-
 
     def forward(self, x):
         z = self.mlp_z_hat_z(x)
