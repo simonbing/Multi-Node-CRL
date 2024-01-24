@@ -68,7 +68,6 @@ class MultiNodeIVModel(object):
                 self.model(x_train)
                 # Get loss
                 var_loss, constr_loss, diag_loss, norm_loss = self.model.var_loss, self.model.constr_loss, self.model.diag_loss, self.model.norm_loss
-                # loss_tot = var_loss -2 * constr_loss + beta * norm_loss # TODO: add constr loss
                 loss_tot = var_loss + 5 * norm_loss - constr_loss + 10 * diag_loss
                 # Backward pass
                 loss_tot.backward()
