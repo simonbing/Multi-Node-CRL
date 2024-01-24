@@ -1,0 +1,19 @@
+name: multi_node_crl
+channels:
+  - pytorch
+  - anaconda
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10.6
+  - pytorch=2.0.1
+  - absl-py
+  - matplotlib-base
+  - networkx
+  - numpy
+  - pip
+  - wandb
+  - pip:
+    - scikit-learn
+    - scipy
+    - tensorboard
